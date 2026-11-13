@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.secure.fileservice.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.secure.fileservice.grpc";
+
+import "google/protobuf/timestamp.proto";
+
+service FileQueryService {
+  rpc GetAllFiles (GetAllFilesRequest) returns (FileListResponse);
+  rpc GetDownloadUrl (GetDownloadUrlRequest) returns (DownloadUrlResponse);
+}
+
+message GetAllFilesRequest {
+  string user_id = 1;
+  int64 page = 2;
+  int32 page_size = 3;
+}
+
+message FileMetadataResponse {
+  string id = 1;
+  string file_name = 2;
+  string content_type = 3;
+  int64 size_bytes = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message FileListResponse {
+  repeated FileMetadataResponse files = 1;
+}
+
+message GetDownloadUrlRequest {
+  string file_id = 1;
+}
+
+message DownloadUrlResponse {
+  string download_url = 1;
+}

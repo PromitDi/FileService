@@ -2,10 +2,11 @@
 java = "21"
 springBoot = "3.4.2"
 springDependencyManagement = "1.1.7"
+tomcatAnnotations = "6.0.53"
 kafka = "3.3.2"
 minio = "8.5.12"
 grpc = "1.69.0"
-protobuf = "4.29.0"
+protobuf = "4.36.2"
 grpc-spring-boot = "3.1.0.RELEASE"
 
 [libraries]
@@ -23,9 +24,12 @@ grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
 protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
 grpc-spring-boot-server = { module = "net.devh:grpc-server-spring-boot-starter", version.ref = "grpc-spring-boot" }
 grpc-spring-boot-client = { module = "net.devh:grpc-client-spring-boot-starter", version.ref = "grpc-spring-boot" }
+tomcat-annotations-api = { module = "org.apache.tomcat:annotations-api", version.ref = "tomcatAnnotations" }
 
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+protoc-gen-grpc = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc" }
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
 dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
-protobuf = { id = "com.google.protobuf", version = "0.9.4" }
+protobuf = { id = "com.google.protobuf", version = "0.10.0" }

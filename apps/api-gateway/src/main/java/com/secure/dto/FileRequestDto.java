@@ -1,6 +1,12 @@
 package com.secure.dto;
 
+import java.time.LocalDate;
+
 public record FileRequestDto(
-        String fileName
+        Long fileId,
+        String fileName,
+        String fileType,
+        Long fileSize,
+        LocalDate createdDate
 ) {
 }

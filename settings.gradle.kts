@@ -14,7 +14,8 @@ plugins {
 }
 
 include(":apps:api-gateway")
-
+include(":libs:grpc-contracts")
+include(":libs:common-constants")
 
 
 

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-gateway
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 55MB
+
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+    include-message: never
+
+grpc:
+  client:
+    file-query-service:
+      address: '${FILE_QUERY_GRPC_URL:static://localhost:9090}'
+      negotiationType: plaintext
+
+logging:
+  level:
+    root: INFO
+    com.secure: DEBUG

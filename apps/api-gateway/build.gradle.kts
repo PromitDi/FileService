@@ -17,4 +17,6 @@ dependencies {
 
 	testImplementation(libs.spring.boot.starter.test)
 	testRuntimeOnly(libs.junit.launcher)
+	implementation(project(":libs:grpc-contracts"))
+	implementation(project(":libs:common-constants"))
 }
